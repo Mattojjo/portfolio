@@ -159,6 +159,33 @@
     animation-delay: 1.05s;
   }
 
+  /* Respect user's motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-scale-wave-1,
+    .animate-scale-wave-2,
+    .animate-scale-wave-3,
+    .animate-scale-wave-4,
+    .animate-scale-wave-5,
+    .animate-scale-wave-6,
+    .animate-scale-wave-7,
+    .animate-scale-wave-8 {
+      animation: none;
+    }
+    
+    /* Still allow hover animation for reduced motion users */
+    .animate-scale-wave-1:hover,
+    .animate-scale-wave-2:hover,
+    .animate-scale-wave-3:hover,
+    .animate-scale-wave-4:hover,
+    .animate-scale-wave-5:hover,
+    .animate-scale-wave-6:hover,
+    .animate-scale-wave-7:hover,
+    .animate-scale-wave-8:hover {
+      transform: scale(1.15);
+      transition: transform 0.2s ease;
+    }
+  }
+
   /* Confetti falling animation */
   @keyframes confetti-fall {
     0% {

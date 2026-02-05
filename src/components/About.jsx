@@ -4,12 +4,13 @@ export default function About() {
   const [isVisible, setIsVisible] = useState(false);
   const [count, setCount] = useState(0);
   const [celebrate, setCelebrate] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
   const sectionRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !hasAnimated) {
           setIsVisible(true);
         }
       },
@@ -25,7 +26,7 @@ export default function About() {
         observer.unobserve(sectionRef.current);
       }
     };
-  }, []);
+  }, [hasAnimated]);
 
   useEffect(() => {
     if (isVisible && count < 10) {
@@ -33,8 +34,10 @@ export default function About() {
         setCount(count + 1);
       }, 100);
       return () => clearTimeout(timer);
+    } else if (count === 10 && !hasAnimated) {
+      setHasAnimated(true);
     }
-  }, [isVisible, count]);
+  }, [isVisible, count, hasAnimated]);
 
   useEffect(() => {
     if (count === 10) {
