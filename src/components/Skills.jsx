@@ -62,7 +62,7 @@ export default function Skills() {
         </div>
         
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-gray-100 p-8 rounded-3xl neu-shadow hover:scale-[1.02] transition-all duration-300">
+          <div className="bg-gray-100 p-8 rounded-3xl neu-inset hover:scale-[1.02] transition-all duration-300">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-14 h-14 bg-gradient-to-br from-orange-400 to-orange-500 rounded-2xl flex items-center justify-center neu-shadow-sm hover:scale-110 transition-transform duration-300">
                 <span className="text-white text-2xl">⚡</span>
@@ -73,7 +73,7 @@ export default function Skills() {
               {techSkills.map((skill, index) => (
                 <span 
                   key={index}
-                  className="px-5 py-3 bg-gray-100 text-gray-700 rounded-2xl text-sm font-medium neu-flat hover:neu-shadow hover:scale-105 transition-all duration-300 cursor-pointer"
+                  className="px-5 py-3 bg-gray-100 text-gray-700 rounded-2xl text-sm font-medium neu-shadow hover:scale-105 transition-all duration-300 cursor-pointer"
                 >
                   {skill}
                 </span>
@@ -81,7 +81,7 @@ export default function Skills() {
             </div>
           </div>
           
-          <div className="bg-gray-100 p-8 rounded-3xl neu-shadow hover:scale-[1.02] transition-all duration-300">
+          <div className="bg-gray-100 p-8 rounded-3xl neu-inset hover:scale-[1.02] transition-all duration-300">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-14 h-14 bg-gradient-to-br from-orange-400 to-orange-500 rounded-2xl flex items-center justify-center neu-shadow-sm hover:scale-110 transition-transform duration-300">
                 <span className="text-white text-2xl">🎯</span>
@@ -92,7 +92,7 @@ export default function Skills() {
               {softSkills.map((skill, index) => (
                 <span 
                   key={index}
-                  className="px-5 py-3 bg-gray-100 text-gray-700 rounded-2xl text-sm font-medium neu-flat hover:neu-shadow hover:scale-105 transition-all duration-300 cursor-pointer"
+                  className="px-5 py-3 bg-gray-100 text-gray-700 rounded-2xl text-sm font-medium neu-shadow hover:scale-105 transition-all duration-300 cursor-pointer"
                 >
                   {skill}
                 </span>

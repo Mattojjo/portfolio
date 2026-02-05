@@ -41,7 +41,7 @@ export default function About() {
         
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <div className="bg-gray-100 p-8 rounded-3xl neu-shadow hover:scale-[1.02] transition-all duration-300">
+            <div className="bg-gray-100 p-8 rounded-3xl neu-inset hover:scale-[1.02] transition-all duration-300">
               <h3 className="text-3xl font-bold text-gray-800 mb-4">
                 Combining Leadership & Technology
               </h3>
@@ -60,17 +60,17 @@ export default function About() {
           
           <div className="space-y-6">
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-gray-100 p-8 rounded-3xl neu-shadow text-center hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer">
+              <div className="bg-gray-100 p-8 rounded-3xl neu-inset text-center hover:scale-105 transition-all duration-300 cursor-pointer">
                 <div className="text-5xl font-bold bg-gradient-to-br from-orange-400 to-orange-500 bg-clip-text text-transparent mb-2">10+</div>
                 <div className="text-gray-600 text-sm">Years Experience</div>
               </div>
-              <div className="bg-gray-100 p-8 rounded-3xl neu-shadow text-center hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer">
+              <div className="bg-gray-100 p-8 rounded-3xl neu-inset text-center hover:scale-105 transition-all duration-300 cursor-pointer">
                 <div className="text-5xl font-bold bg-gradient-to-br from-orange-400 to-orange-500 bg-clip-text text-transparent mb-2">50+</div>
                 <div className="text-gray-600 text-sm">Projects Completed</div>
               </div>
             </div>
             
-            <div className="bg-gray-100 p-8 rounded-3xl neu-shadow hover:scale-[1.02] transition-all duration-300">
+            <div className="bg-gray-100 p-8 rounded-3xl neu-inset hover:scale-[1.02] transition-all duration-300">
               <h4 className="text-xl font-semibold text-gray-800 mb-4">What Sets Me Apart</h4>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">

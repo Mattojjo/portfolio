@@ -64,7 +64,7 @@ export default function Navbar() {
     <nav className="fixed top-0 w-full bg-gray-100 z-50">
       <div className="max-w-4xl mx-auto px-3 sm:px-6 py-4 sm:py-6">
         <div className="flex justify-center items-center">
-          <div ref={navRef} className="relative flex gap-2 sm:gap-2 bg-white px-2.5 sm:px-3 py-2.5 sm:py-3 rounded-full neu-shadow overflow-x-auto max-w-full">
+          <div ref={navRef} className="relative flex gap-2 sm:gap-2 bg-white px-2.5 sm:px-3 py-2.5 sm:py-3 rounded-full neu-inset overflow-x-auto max-w-full">
             <div
               className={`absolute top-2.5 sm:top-3 h-[calc(100%-1.25rem)] sm:h-[calc(100%-1.5rem)] bg-gradient-to-br from-orange-400 to-orange-500 rounded-full transition-all duration-300 ease-out shadow-lg backdrop-blur-sm ${
                 isTransitioning ? 'scale-30' : 'scale-100'

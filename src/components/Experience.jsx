@@ -83,18 +83,13 @@ export default function Experience() {
           {experiences.map((exp, index) => (
             <div 
               key={index}
-              className="bg-gray-100 p-8 rounded-3xl neu-shadow hover:scale-[1.02] hover:shadow-xl transition-all duration-300 group cursor-pointer"
+              className="bg-gray-100 p-8 rounded-3xl neu-inset hover:scale-[1.02] transition-all duration-300 group cursor-pointer"
             >
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-800 group-hover:text-orange-500 transition">
-                    {exp.role}
-                  </h3>
-                  <p className="text-lg text-gray-600 mt-1">{exp.company}</p>
-                </div>
-                <span className="px-6 py-2 bg-gray-100 text-gray-700 rounded-2xl text-sm font-medium neu-flat whitespace-nowrap">
-                  {exp.period}
-                </span>
+              <div className="mb-4">
+                <h3 className="text-2xl font-bold text-gray-800 group-hover:text-orange-500 transition">
+                  {exp.role}
+                </h3>
+                <p className="text-lg text-gray-600 mt-1">{exp.company}</p>
               </div>
               
               <p className="text-gray-600 mb-4">{exp.description}</p>
