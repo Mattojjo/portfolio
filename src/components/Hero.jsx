@@ -58,8 +58,12 @@ export default function Hero() {
           </div>
           <div className="relative flex justify-center">
             <div className="relative w-full aspect-square max-w-xl">
-              <div className="bg-gray-100 rounded-full p-4 neu-shadow">
-                <div className="rounded-full overflow-hidden neu-inset">
+              <div className="bg-gray-100 p-4 neu-shadow animate-blob" style={{
+                borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%'
+              }}>
+                <div className="overflow-hidden neu-inset animate-blob-reverse" style={{
+                  borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%'
+                }}>
                   <img 
                     src={profileImage} 
                     alt="Leinad Suarez" 
