@@ -64,7 +64,7 @@ export default function About() {
         </div>
         
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
+          <div className="space-y-6 order-2 md:order-1">
             <div className="bg-gray-100 p-8 rounded-3xl neu-inset hover:scale-[1.02] transition-all duration-300">
               <h3 className="text-3xl text-orange-500 font-semibold mb-4">
                 Combining Leadership & Technology
@@ -82,7 +82,7 @@ export default function About() {
             </div>
           </div>
           
-          <div className="space-y-6">
+          <div className="space-y-6 order-1 md:order-2">
             <div className="relative bg-gray-100 p-8 rounded-3xl neu-inset text-center hover:scale-105 transition-all duration-300 cursor-pointer overflow-hidden">
               <div className={`text-5xl font-bold bg-gradient-to-br from-orange-400 to-orange-500 bg-clip-text text-transparent mb-2 transition-transform duration-500 ${celebrate ? 'scale-[2]' : 'scale-100'}`}>{count}+</div>
               <div className="text-gray-600 text-sm">Years Experience</div>
