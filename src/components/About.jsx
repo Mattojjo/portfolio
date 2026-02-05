@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 
 export default function About() {
   const [isVisible, setIsVisible] = useState(false);
+  const [count, setCount] = useState(0);
+  const [celebrate, setCelebrate] = useState(false);
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -25,6 +27,25 @@ export default function About() {
     };
   }, []);
 
+  useEffect(() => {
+    if (isVisible && count < 10) {
+      const timer = setTimeout(() => {
+        setCount(count + 1);
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [isVisible, count]);
+
+  useEffect(() => {
+    if (count === 10) {
+      setCelebrate(true);
+      const timer = setTimeout(() => {
+        setCelebrate(false);
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [count]);
+
   return (
     <section 
       ref={sectionRef}
@@ -42,7 +63,7 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <div className="bg-gray-100 p-8 rounded-3xl neu-inset hover:scale-[1.02] transition-all duration-300">
-              <h3 className="text-3xl font-bold text-gray-800 mb-4">
+              <h3 className="text-3xl text-orange-500 font-semibold mb-4">
                 Combining Leadership & Technology
               </h3>
               <p className="text-gray-600 leading-relaxed mb-4">
@@ -59,19 +80,32 @@ export default function About() {
           </div>
           
           <div className="space-y-6">
-            <div className="grid grid-cols-2 gap-6">
-              <div className="bg-gray-100 p-8 rounded-3xl neu-inset text-center hover:scale-105 transition-all duration-300 cursor-pointer">
-                <div className="text-5xl font-bold bg-gradient-to-br from-orange-400 to-orange-500 bg-clip-text text-transparent mb-2">10+</div>
-                <div className="text-gray-600 text-sm">Years Experience</div>
-              </div>
-              <div className="bg-gray-100 p-8 rounded-3xl neu-inset text-center hover:scale-105 transition-all duration-300 cursor-pointer">
-                <div className="text-5xl font-bold bg-gradient-to-br from-orange-400 to-orange-500 bg-clip-text text-transparent mb-2">50+</div>
-                <div className="text-gray-600 text-sm">Projects Completed</div>
-              </div>
+            <div className="relative bg-gray-100 p-8 rounded-3xl neu-inset text-center hover:scale-105 transition-all duration-300 cursor-pointer overflow-hidden">
+              <div className={`text-5xl font-bold bg-gradient-to-br from-orange-400 to-orange-500 bg-clip-text text-transparent mb-2 transition-transform duration-500 ${celebrate ? 'scale-[2]' : 'scale-100'}`}>{count}+</div>
+              <div className="text-gray-600 text-sm">Years Experience</div>
+              
+              {/* Confetti */}
+              {celebrate && (
+                <>
+                  {[...Array(20)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="absolute w-2 h-2 rounded-full pointer-events-none"
+                      style={{
+                        left: `${Math.random() * 100}%`,
+                        top: '-10px',
+                        backgroundColor: ['#f97316', '#fb923c', '#fdba74', '#fed7aa', '#ffedd5'][Math.floor(Math.random() * 5)],
+                        animation: `confetti-fall ${1 + Math.random() * 1.5}s linear forwards`,
+                        animationDelay: `${Math.random() * 0.3}s`,
+                      }}
+                    />
+                  ))}
+                </>
+              )}
             </div>
             
             <div className="bg-gray-100 p-8 rounded-3xl neu-inset hover:scale-[1.02] transition-all duration-300">
-              <h4 className="text-xl font-semibold text-gray-800 mb-4">What Sets Me Apart</h4>
+              <h4 className="text-xl font-semibold text-orange-500 font-semibold mb-4">What Sets Me Apart</h4>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 mt-1">✓</span>

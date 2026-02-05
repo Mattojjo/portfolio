@@ -65,7 +65,7 @@ export default function Skills() {
           <div className="bg-gray-100 p-8 rounded-3xl neu-inset hover:scale-[1.02] transition-all duration-300">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-14 h-14 bg-gradient-to-br from-orange-400 to-orange-500 rounded-2xl flex items-center justify-center neu-shadow-sm hover:scale-110 transition-transform duration-300">
-                <span className="text-white text-2xl">⚡</span>
+                <span className="text-white text-3xl">💻</span>
               </div>
               <h3 className="text-2xl font-bold text-gray-800">Engineering & Technology</h3>
             </div>
@@ -84,7 +84,7 @@ export default function Skills() {
           <div className="bg-gray-100 p-8 rounded-3xl neu-inset hover:scale-[1.02] transition-all duration-300">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-14 h-14 bg-gradient-to-br from-orange-400 to-orange-500 rounded-2xl flex items-center justify-center neu-shadow-sm hover:scale-110 transition-transform duration-300">
-                <span className="text-white text-2xl">🎯</span>
+                <span className="text-white text-3xl">📊</span>
               </div>
               <h3 className="text-2xl font-bold text-gray-800">Leadership & Business</h3>
             </div>
