@@ -15,7 +15,7 @@ export default function Contact() {
               </div>
               <div>
                 <h3 className="text-white font-semibold text-lg mb-1">Email</h3>
-                <a href="mailto:leinad9607@gmail.com" className="text-indigo-100 hover:text-white transition">
+                <a href="mailto:leinad9607@gmail.com" aria-label="Email Leinad Suarez" className="text-indigo-100 hover:text-white transition">
                   leinad9607@gmail.com
                 </a>
               </div>

@@ -89,7 +89,7 @@ export default function Experience() {
                 <h3 className="text-2xl font-bold text-gray-800 group-hover:text-orange-500 transition">
                   {exp.role}
                 </h3>
-                <p className="text-lg text-gray-600 mt-1">{exp.company}</p>
+                <p className="text-lg text-orange-500 font-semibold mt-1">{exp.company} • {exp.period}</p>
               </div>
               
               <p className="text-gray-600 mb-4">{exp.description}</p>
