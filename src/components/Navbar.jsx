@@ -62,11 +62,11 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 w-full bg-gray-100 z-50">
-      <div className="max-w-4xl mx-auto px-6 py-6">
+      <div className="max-w-4xl mx-auto px-3 sm:px-6 py-4 sm:py-6">
         <div className="flex justify-center items-center">
-          <div ref={navRef} className="relative flex gap-2 bg-white px-3 py-3 rounded-full neu-shadow">
+          <div ref={navRef} className="relative flex gap-2 sm:gap-2 bg-white px-2.5 sm:px-3 py-2.5 sm:py-3 rounded-full neu-shadow overflow-x-auto max-w-full">
             <div
-              className={`absolute top-3 h-[calc(100%-1.5rem)] bg-gradient-to-br from-orange-400 to-orange-500 rounded-full transition-all duration-300 ease-out shadow-lg backdrop-blur-sm ${
+              className={`absolute top-2.5 sm:top-3 h-[calc(100%-1.25rem)] sm:h-[calc(100%-1.5rem)] bg-gradient-to-br from-orange-400 to-orange-500 rounded-full transition-all duration-300 ease-out shadow-lg backdrop-blur-sm ${
                 isTransitioning ? 'scale-30' : 'scale-100'
               }`}
               style={{
@@ -80,7 +80,7 @@ export default function Navbar() {
                 key={item.id}
                 href={`#${item.id}`}
                 data-section={item.id}
-                className={`relative z-10 px-8 py-3 rounded-full font-semibold transition-all duration-300 ${
+                className={`relative z-10 px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 rounded-full font-semibold transition-all duration-300 text-sm sm:text-base whitespace-nowrap ${
                   activeSection === item.id
                     ? 'text-white'
                     : 'text-gray-700 hover:text-gray-900'

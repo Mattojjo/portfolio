@@ -150,11 +150,6 @@ export default function Hero() {
               Results-driven developer with a unique blend of enterprise leadership and modern web development. 
               Building scalable solutions with React, JavaScript, and cutting-edge technologies.
             </p>
-            <div className="flex gap-4 pt-4">
-              <a href="#about" className="bg-gray-100 text-gray-800 px-8 py-4 rounded-2xl neu-shadow hover:neu-hover hover:scale-105 transition-all duration-300 font-semibold inline-block">
-                Read More
-              </a>
-            </div>
             
             {/* Tech Stack Icons */}
             <div className="pt-8">
