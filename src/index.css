@@ -84,5 +84,55 @@
   .animate-blob-reverse {
     animation: blob-reverse 10s ease-in-out infinite;
   }
+
+  /* Tech icon wave animation */
+  @keyframes scaleWave {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.15);
+    }
+  }
+
+  .animate-scale-wave-1 {
+    animation: scaleWave 3s ease-in-out infinite;
+    animation-delay: 0s;
+  }
+
+  .animate-scale-wave-2 {
+    animation: scaleWave 3s ease-in-out infinite;
+    animation-delay: 0.15s;
+  }
+
+  .animate-scale-wave-3 {
+    animation: scaleWave 3s ease-in-out infinite;
+    animation-delay: 0.3s;
+  }
+
+  .animate-scale-wave-4 {
+    animation: scaleWave 3s ease-in-out infinite;
+    animation-delay: 0.45s;
+  }
+
+  .animate-scale-wave-5 {
+    animation: scaleWave 3s ease-in-out infinite;
+    animation-delay: 0.6s;
+  }
+
+  .animate-scale-wave-6 {
+    animation: scaleWave 3s ease-in-out infinite;
+    animation-delay: 0.75s;
+  }
+
+  .animate-scale-wave-7 {
+    animation: scaleWave 3s ease-in-out infinite;
+    animation-delay: 0.9s;
+  }
+
+  .animate-scale-wave-8 {
+    animation: scaleWave 3s ease-in-out infinite;
+    animation-delay: 1.05s;
+  }
 }
 

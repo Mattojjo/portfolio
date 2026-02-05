@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
-import ResumeModal from './ResumeModal';
+import resumePdf from '../assets/Lee – Professional Resume.pdf';
 
 export default function Experience() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
@@ -113,16 +112,16 @@ export default function Experience() {
         </div>
         
         <div className="mt-12 text-center">
-          <button 
-            onClick={() => setIsModalOpen(true)}
-            className="bg-gradient-to-br from-orange-400 to-orange-500 text-white px-10 py-4 rounded-2xl neu-shadow hover:shadow-xl hover:scale-105 transition-all duration-300 font-semibold"
+          <a 
+            href={resumePdf}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-gradient-to-br from-orange-400 to-orange-500 text-white px-10 py-4 rounded-2xl neu-shadow hover:shadow-xl hover:scale-105 transition-all duration-300 font-semibold"
           >
             View Full Resume
-          </button>
+          </a>
         </div>
       </div>
-      
-      <ResumeModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 }
