@@ -1,3 +1,55 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply text-gray-700 bg-gray-100;
+  }
+}
+
+@layer utilities {
+  /* Neomorphic shadows */
+  .neu-shadow {
+    box-shadow: 
+      8px 8px 16px rgba(163, 177, 198, 0.6),
+      -8px -8px 16px rgba(255, 255, 255, 0.8);
+  }
+  
+  .neu-shadow-sm {
+    box-shadow: 
+      4px 4px 8px rgba(163, 177, 198, 0.4),
+      -4px -4px 8px rgba(255, 255, 255, 0.8);
+  }
+  
+  .neu-inset {
+    box-shadow: 
+      inset 4px 4px 8px rgba(163, 177, 198, 0.5),
+      inset -4px -4px 8px rgba(255, 255, 255, 0.8);
+  }
+  
+  .neu-flat {
+    box-shadow: 
+      2px 2px 4px rgba(163, 177, 198, 0.3),
+      -2px -2px 4px rgba(255, 255, 255, 0.8);
+  }
+  
+  .neu-hover {
+    transition: all 0.3s ease;
+  }
+  
+  .neu-hover:hover {
+    box-shadow: 
+      12px 12px 24px rgba(163, 177, 198, 0.6),
+      -12px -12px 24px rgba(255, 255, 255, 0.8);
+  }
+  
+  .neu-pressed {
+    box-shadow: 
+      inset 6px 6px 12px rgba(163, 177, 198, 0.6),
+      inset -6px -6px 12px rgba(255, 255, 255, 0.5);
+  }
+}
+
