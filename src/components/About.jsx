@@ -105,7 +105,7 @@ export default function About() {
             </div>
             
             <div className="bg-gray-100 p-8 rounded-3xl neu-inset hover:scale-[1.02] transition-all duration-300">
-              <h4 className="text-xl font-semibold text-orange-500 font-semibold mb-4">What Sets Me Apart</h4>
+              <h4 className="text-xl font-semibold text-orange-500 mb-4">What Sets Me Apart</h4>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 mt-1">✓</span>
