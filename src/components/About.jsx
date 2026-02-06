@@ -49,6 +49,10 @@ export default function About() {
     }
   }, [count]);
 
+  function CheckIcon() {
+    return <span className="text-orange-500 mt-1">✓</span>;
+  }
+
   return (
     <section 
       ref={sectionRef}
@@ -65,8 +69,8 @@ export default function About() {
         
         <div className="flex flex-col gap-8 md:gap-12 items-center">
           <div className="relative bg-gray-100 p-8 rounded-3xl neu-inset text-center hover:scale-105 transition-all duration-300 cursor-pointer overflow-hidden w-full max-w-xl mx-auto">
-            <div className={`text-5xl font-bold bg-gradient-to-br from-orange-400 to-orange-500 bg-clip-text text-transparent mb-2 transition-transform duration-500 ${celebrate ? 'scale-[2]' : 'scale-100'}`}>{count}+</div>
-            <div className="text-gray-600 text-sm">Years Experience</div>
+            <div className={`text-5xl font-bold bg-gradient-to-br from-orange-400 to-orange-500 bg-clip-text text-transparent mb-2 transition-transform duration-500 ${celebrate ? 'scale-[2.5]' : 'scale-100'}`}>{count}+</div>
+            <div className="text-gray-600 text-md font-bold">Years of Experience</div>
             {celebrate && (
               <>
                 {[...Array(20)].map((_, i) => (
@@ -86,42 +90,43 @@ export default function About() {
             )}
           </div>
 
-          <div className="bg-gray-100 p-8 rounded-3xl neu-inset hover:scale-[1.02] transition-all duration-300 w-full max-w-2xl mx-auto">
-            <h4 className="text-2xl font-bold text-orange-500 mb-4">What Sets Me Apart</h4>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <span className="text-orange-500 mt-1">✓</span>
-                <span className="text-gray-600">Real-world understanding of customers and operations</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-orange-500 mt-1">✓</span>
-                <span className="text-gray-600">Effective communication with technical and non-technical stakeholders</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-orange-500 mt-1">✓</span>
-                <span className="text-gray-600">Ownership, accountability, and leadership in every project</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-orange-500 mt-1">✓</span>
-                <span className="text-gray-600">Experience delivering solutions at enterprise scale</span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="bg-gray-100 p-8 rounded-3xl neu-inset hover:scale-[1.02] transition-all duration-300 w-full max-w-2xl mx-auto">
-            <h3 className="text-2xl text-orange-500 font-bold mb-4">
-              Combining Leadership & Technology
-            </h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <span className="text-orange-500 mt-1">✓</span>
-                <span className="text-gray-600">Former Customer Experience Manager with nearly a decade of progressive leadership at a Fortune 500 retailer, now delivering high-impact software using React, JavaScript, Node.js, and modern frontend tooling.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-orange-500 mt-1">✓</span>
-                <span className="text-gray-600">Known for strong ownership, cross-functional collaboration, and a customer-first engineering mindset. I design software with a real-world understanding of customers and operations.</span>
-              </li>
-            </ul>
+          <div className="flex flex-col md:flex-row gap-8 w-full max-w-5xl">
+            <div className="bg-gray-100 p-8 rounded-3xl neu-inset hover:scale-[1.02] transition-all duration-300 flex-1">
+              <h4 className="text-2xl font-bold text-orange-500 mb-4">What Sets Me Apart</h4>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <CheckIcon />
+                  <span className="text-gray-600">Real-world understanding of customers and operations</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckIcon />
+                  <span className="text-gray-600">Effective communication with technical and non-technical stakeholders</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckIcon />
+                  <span className="text-gray-600">Ownership, accountability, and leadership in every project</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckIcon />
+                  <span className="text-gray-600">Experience delivering solutions at enterprise scale</span>
+                </li>
+              </ul>
+            </div>
+            <div className="bg-gray-100 p-8 rounded-3xl neu-inset hover:scale-[1.02] transition-all duration-300 flex-1">
+              <h3 className="text-2xl text-orange-500 font-bold mb-4">
+                Combining Leadership & Technology
+              </h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <CheckIcon />
+                  <span className="text-gray-600">Former Customer Experience Manager with nearly a decade of progressive leadership at a Fortune 500 retailer, now delivering high-impact software using React, JavaScript, Node.js, and modern frontend tooling.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckIcon />
+                  <span className="text-gray-600">Known for strong ownership, cross-functional collaboration, and a customer-first engineering mindset. I design software with a real-world understanding of customers and operations.</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
