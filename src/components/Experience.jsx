@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import resumePdf from '../assets/Lee – Professional Resume.pdf';
+
 
 export default function Experience() {
   const [isVisible, setIsVisible] = useState(false);
@@ -104,17 +104,6 @@ export default function Experience() {
               </div>
             </div>
           ))}
-        </div>
-        
-        <div className="mt-12 text-center">
-          <a 
-            href={resumePdf}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-gradient-to-br from-orange-400 to-orange-500 text-white px-10 py-4 rounded-2xl neu-shadow hover:shadow-xl hover:scale-105 transition-all duration-300 font-semibold"
-          >
-            View Full Resume
-          </a>
         </div>
       </div>
     </section>
