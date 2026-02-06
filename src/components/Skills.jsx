@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { techIcons } from './techIcons.jsx';
 
 export default function Skills() {
   const [isVisible, setIsVisible] = useState(false);
@@ -25,18 +26,7 @@ export default function Skills() {
     };
   }, []);
 
-  const techSkills = [
-    'JavaScript (ES6+)',
-    'React',
-    'Next.js',
-    'Node.js',
-    'Spring Boot',
-    'SQL',
-    'REST APIs',
-    'TailwindCSS',
-    'Vite',
-    'Contentful'
-  ];
+  const techSkills = techIcons;
   
   const softSkills = [
     'Team Management',
@@ -64,18 +54,16 @@ export default function Skills() {
         <div className="grid md:grid-cols-2 gap-8">
           <div className="bg-gray-100 p-8 rounded-3xl neu-inset hover:scale-[1.02] transition-all duration-300">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-14 h-14 bg-gradient-to-br from-orange-400 to-orange-500 rounded-2xl flex items-center justify-center neu-shadow-sm hover:scale-110 transition-transform duration-300">
-                <span className="text-white text-3xl">💻</span>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-800">Engineering & Technology</h3>
+              <h3 className="text-2xl font-bold text-orange-500">Engineering & Technology</h3>
             </div>
             <div className="flex flex-wrap gap-3">
               {techSkills.map((skill, index) => (
-                <span 
+                <span
                   key={index}
-                  className="px-5 py-3 bg-gray-100 text-gray-700 rounded-2xl text-sm font-medium neu-shadow hover:scale-105 transition-all duration-300 cursor-pointer"
+                  className="flex items-center gap-2 px-5 py-3 bg-gray-100 text-gray-700 rounded-2xl text-sm font-medium neu-shadow hover:scale-105 transition-all duration-300 cursor-pointer"
                 >
-                  {skill}
+                  {skill.svg}
+                  {skill.name}
                 </span>
               ))}
             </div>
@@ -83,10 +71,7 @@ export default function Skills() {
           
           <div className="bg-gray-100 p-8 rounded-3xl neu-inset hover:scale-[1.02] transition-all duration-300">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-14 h-14 bg-gradient-to-br from-orange-400 to-orange-500 rounded-2xl flex items-center justify-center neu-shadow-sm hover:scale-110 transition-transform duration-300">
-                <span className="text-white text-3xl">📊</span>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-800">Leadership & Business</h3>
+              <h3 className="text-2xl font-bold text-orange-500">Leadership & Business</h3>
             </div>
             <div className="flex flex-wrap gap-3">
               {softSkills.map((skill, index) => (

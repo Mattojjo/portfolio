@@ -66,7 +66,7 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 order-2 md:order-1">
             <div className="bg-gray-100 p-8 rounded-3xl neu-inset hover:scale-[1.02] transition-all duration-300">
-              <h3 className="text-3xl text-orange-500 font-semibold mb-4">
+              <h3 className="text-3xl text-orange-500 font-bold mb-4">
                 Combining Leadership & Technology
               </h3>
               <p className="text-gray-600 leading-relaxed mb-4">
@@ -108,7 +108,7 @@ export default function About() {
             </div>
             
             <div className="bg-gray-100 p-8 rounded-3xl neu-inset hover:scale-[1.02] transition-all duration-300">
-              <h4 className="text-xl font-semibold text-orange-500 mb-4">What Sets Me Apart</h4>
+              <h4 className="text-xl font-bold text-orange-500 mb-4">What Sets Me Apart</h4>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 mt-1">✓</span>
