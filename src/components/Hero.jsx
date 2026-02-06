@@ -201,6 +201,8 @@ export default function Hero() {
                     src={profileImage} 
                     alt="Leinad Suarez" 
                     className="w-full h-full object-cover scale-125 object-center"
+      alt="Leinad Suarez" 
+                    className="w-full h-full object-cover scale-125 object-center"
                   />
                 </div>
               </div>
