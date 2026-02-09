@@ -1,13 +1,31 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
+import Confetti from 'react-confetti';
+
+function CheckIcon() {
+  return <span className="text-orange-500 mt-1">✓</span>;
+}
 
 export default function About() {
   const [isVisible, setIsVisible] = useState(false);
   const [count, setCount] = useState(0);
   const [celebrate, setCelebrate] = useState(false);
-  const [hasAnimated, setHasAnimated] = useState(false);
   const sectionRef = useRef(null);
+  const hasCelebratedRef = useRef(false);
+
+  const hasAnimated = count >= 10;
+
+  const triggerCelebration = useCallback(() => {
+    if (!hasCelebratedRef.current) {
+      hasCelebratedRef.current = true;
+      setCelebrate(true);
+      setTimeout(() => {
+        setCelebrate(false);
+      }, 1500);
+    }
+  }, []);
 
   useEffect(() => {
+    const element = sectionRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimated) {
@@ -17,13 +35,13 @@ export default function About() {
       { threshold: 0.1 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (element) {
+      observer.observe(element);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (element) {
+        observer.unobserve(element);
       }
     };
   }, [hasAnimated]);
@@ -31,27 +49,18 @@ export default function About() {
   useEffect(() => {
     if (isVisible && count < 10) {
       const timer = setTimeout(() => {
-        setCount(count + 1);
+        setCount(prevCount => prevCount + 1);
       }, 100);
       return () => clearTimeout(timer);
-    } else if (count === 10 && !hasAnimated) {
-      setHasAnimated(true);
     }
-  }, [isVisible, count, hasAnimated]);
+  }, [isVisible, count]);
 
   useEffect(() => {
     if (count === 10) {
-      setCelebrate(true);
-      const timer = setTimeout(() => {
-        setCelebrate(false);
-      }, 1500);
-      return () => clearTimeout(timer);
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      triggerCelebration();
     }
-  }, [count]);
-
-  function CheckIcon() {
-    return <span className="text-orange-500 mt-1">✓</span>;
-  }
+  }, [count, triggerCelebration]);
 
   return (
     <section 
@@ -72,24 +81,14 @@ export default function About() {
             <div className={`text-5xl font-bold bg-gradient-to-br from-orange-400 to-orange-500 bg-clip-text text-transparent mb-2 transition-transform duration-500 ${celebrate ? 'scale-[2.5]' : 'scale-100'}`}>{count}+</div>
             <div className="text-gray-600 text-md font-bold">Years of Experience</div>
             {celebrate && (
-              <>
-                {[...Array(20)].map((_, i) => (
-                  <div
-                    key={i}
-                    className="absolute w-2 h-2 rounded-full pointer-events-none"
-                    style={{
-                      left: `${Math.random() * 100}%`,
-                      top: '-10px',
-                      backgroundColor: ['#f97316', '#fb923c', '#fdba74', '#fed7aa', '#ffedd5'][Math.floor(Math.random() * 5)],
-                      animation: `confetti-fall ${1 + Math.random() * 1.5}s linear forwards`,
-                      animationDelay: `${Math.random() * 0.3}s`,
-                    }}
-                  />
-                ))}
-              </>
+              <Confetti
+                gravity={0.2}
+                recycle={false}
+                numberOfPieces={6000}
+                colors={['#f97316', '#fb923c', '#fdba74', '#fed7aa', '#ffedd5']}
+              />
             )}
           </div>
-
           <div className="flex flex-col md:flex-row gap-8 w-full max-w-5xl">
             <div className="bg-gray-100 p-8 rounded-3xl neu-inset hover:scale-[1.02] transition-all duration-300 flex-1">
               <h4 className="text-2xl font-bold text-orange-500 mb-4">What Sets Me Apart</h4>
