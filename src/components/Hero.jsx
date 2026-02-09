@@ -8,8 +8,6 @@ export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const sectionRef = useRef(null);
 
-  const heroIcons = techIcons.map(icon => icon.svg);
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -37,16 +35,7 @@ export default function Hero() {
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [techIcons.length]);
-
-  const getVisibleIcons = () => {
-    const visible = [];
-    for (let i = 0; i < 5; i++) {
-      const index = (currentIndex + i) % techIcons.length;
-      visible.push({ ...techIcons[index], key: index });
-    }
-    return visible;
-  };
+  }, []);
 
   return (
     <section 
@@ -200,8 +189,6 @@ export default function Hero() {
                   <img 
                     src={profileImage} 
                     alt="Leinad Suarez" 
-                    className="w-full h-full object-cover scale-125 object-center"
-      alt="Leinad Suarez" 
                     className="w-full h-full object-cover scale-125 object-center"
                   />
                 </div>
