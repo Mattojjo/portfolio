@@ -8,7 +8,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'services', 'work'];
+      const sections = ['home', 'about', 'skills', 'experience'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -27,7 +27,7 @@ export default function Navbar() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Call once on mount
+    handleScroll();
     
     return () => window.removeEventListener('scroll', handleScroll);
   }, [activeSection]);
@@ -42,7 +42,6 @@ export default function Navbar() {
           width: offsetWidth,
         });
         
-        // End transition after animation completes
         setTimeout(() => setIsTransitioning(false), 100);
       }
     };
@@ -56,8 +55,8 @@ export default function Navbar() {
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
-    { id: 'services', label: 'Services' },
-    { id: 'work', label: 'Work' }
+    { id: 'skills', label: 'Skills' },
+    { id: 'experience', label: 'Experience' }
   ];
 
   return (
