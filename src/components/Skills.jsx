@@ -18,7 +18,7 @@ const [sectionRef, isVisible] = useSectionVisible();
   return (
     <section 
       ref={sectionRef}
-      id="services" 
+      id="skills" 
       className={`py-20 bg-gray-100 transition-all duration-1000 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`}
