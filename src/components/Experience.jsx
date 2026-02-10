@@ -1,31 +1,7 @@
-import { useState, useEffect, useRef } from 'react';
-
+import { useSectionVisible } from '../hooks/useSectionVisible';
 
 export default function Experience() {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const element = sectionRef.current;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (element) {
-      observer.observe(element);
-    }
-
-    return () => {
-      if (element) {
-        observer.unobserve(element);
-      }
-    };
-  }, []);
+const [sectionRef, isVisible] = useSectionVisible();
 
   const experiences = [
     {

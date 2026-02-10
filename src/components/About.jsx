@@ -1,66 +1,11 @@
-import { useEffect, useRef, useState, useCallback } from 'react';
-import Confetti from 'react-confetti';
+import { useSectionVisible } from '../hooks/useSectionVisible';
 
 function CheckIcon() {
   return <span className="text-orange-500 mt-1">✓</span>;
 }
 
 export default function About() {
-  const [isVisible, setIsVisible] = useState(false);
-  const [count, setCount] = useState(0);
-  const [celebrate, setCelebrate] = useState(false);
-  const sectionRef = useRef(null);
-  const hasCelebratedRef = useRef(false);
-
-  const hasAnimated = count >= 10;
-
-  const triggerCelebration = useCallback(() => {
-    if (!hasCelebratedRef.current) {
-      hasCelebratedRef.current = true;
-      setCelebrate(true);
-      setTimeout(() => {
-        setCelebrate(false);
-      }, 1500);
-    }
-  }, []);
-
-  useEffect(() => {
-    const element = sectionRef.current;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (element) {
-      observer.observe(element);
-    }
-
-    return () => {
-      if (element) {
-        observer.unobserve(element);
-      }
-    };
-  }, [hasAnimated]);
-
-  useEffect(() => {
-    if (isVisible && count < 10) {
-      const timer = setTimeout(() => {
-        setCount(prevCount => prevCount + 1);
-      }, 100);
-      return () => clearTimeout(timer);
-    }
-  }, [isVisible, count]);
-
-  useEffect(() => {
-    if (count === 10) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      triggerCelebration();
-    }
-  }, [count, triggerCelebration]);
+const [sectionRef, isVisible] = useSectionVisible();
 
   return (
     <section 
@@ -77,18 +22,6 @@ export default function About() {
         </div>
         
         <div className="flex flex-col gap-8 md:gap-12 items-center">
-          <div className="relative bg-gray-100 p-8 rounded-3xl neu-inset text-center hover:scale-105 transition-all duration-300 cursor-pointer overflow-hidden w-full max-w-xl mx-auto">
-            <div className={`text-5xl font-bold bg-gradient-to-br from-orange-400 to-orange-500 bg-clip-text text-transparent mb-2 transition-transform duration-500 ${celebrate ? 'scale-[2.5]' : 'scale-100'}`}>{count}+</div>
-            <div className="text-gray-600 text-md font-bold">Years of Experience</div>
-            {celebrate && (
-              <Confetti
-                gravity={0.2}
-                recycle={false}
-                numberOfPieces={6000}
-                colors={['#f97316', '#fb923c', '#fdba74', '#fed7aa', '#ffedd5']}
-              />
-            )}
-          </div>
           <div className="flex flex-col md:flex-row gap-8 w-full max-w-5xl">
             <div className="bg-gray-100 p-8 rounded-3xl neu-inset hover:scale-[1.02] transition-all duration-300 flex-1">
               <h4 className="text-2xl font-bold text-orange-500 mb-4">What Sets Me Apart</h4>
