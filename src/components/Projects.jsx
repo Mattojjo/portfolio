@@ -33,12 +33,12 @@ export default function Projects() {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative bg-white rounded-3xl neu-inset hover:scale-105 transition-all duration-500 block overflow-hidden group cursor-pointer min-h-[320px]"
+              className="relative bg-gray-100 rounded-3xl neu-inset hover:scale-105 transition-all duration-500 block overflow-hidden group cursor-pointer min-h-[320px]"
             >
               <div className="relative z-20 p-8 transition-opacity duration-300 group-hover:opacity-0">
                 <h3 className="text-2xl font-bold text-orange-500 mb-4">{project.name}</h3>
                 <p className="text-gray-600 mb-4">{project.reason}</p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-3">
                   {project.technologies.map((tech, idx) => {
                     const techIcon = getTechIcon(tech);
                     return (
@@ -46,7 +46,7 @@ export default function Projects() {
                         key={idx}
                         className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium neu-shadow flex items-center gap-1.5"
                       >
-                        {techIcon && <span className="scale-75">{techIcon.svg}</span>}
+                        {techIcon && <span className="scale-90">{techIcon.svg}</span>}
                         {tech}
                       </span>
                     );
@@ -72,7 +72,7 @@ export default function Projects() {
                     className="w-full h-full object-cover"
                     style={{ pointerEvents: 'none' }}
                   />
-                  <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-20"></div>
+                  <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-gray-100 to-transparent z-20"></div>
                 </div>
               </div>
             </a>

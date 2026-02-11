@@ -17,6 +17,9 @@ const [sectionRef, isVisible] = useSectionVisible();
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Experience</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-orange-400 to-orange-500 mx-auto rounded-full"></div>
         </div>
+        <div className="max-w-3xl mx-auto text-center text-gray-700 mb-8">
+          <p className="text-lg">Before transitioning into software engineering, I spent over a decade in leadership and customer-facing roles.</p>
+        </div>
         
         <div className="space-y-6">
           {experiences.map((exp, index) => (
