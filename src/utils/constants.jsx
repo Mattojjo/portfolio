@@ -92,6 +92,7 @@ export const techIcons = [
 export const projects = [
     {
         name: 'PlayGround',
+        key: 'playground',
         description: 'A modern, responsive React-based collection of interactive party games perfect for gatherings, date nights, and social events.',
         technologies: ['React', 'Vite', 'Tailwind CSS'],
         link: 'https://playground-alpha-three.vercel.app',
@@ -100,6 +101,7 @@ export const projects = [
     },
     {
         name: 'GraphZ',
+        key: 'graphz',
         description: 'A real-time day trading simulator built with React featuring candlestick charts, portfolio management, and mocked market data.',
         technologies: ['React', 'Tailwind CSS', 'Vite'],
         link: 'https://github.com/Mattojjo/graphz',
@@ -108,6 +110,7 @@ export const projects = [
     },    
     {
         name: 'Libreto',
+        key: 'libreto',
         description: 'A notes app built with Next.js, Node.js, and Tailwind CSS, designed for simplicity and speed to help you capture ideas and stay organized.',
         technologies: ['Node.js', 'React', 'Tailwind CSS', 'Vite'],
         link: 'https://github.com/Mattojjo/libreto',
@@ -116,6 +119,7 @@ export const projects = [
     },
     {
         name: 'oRight',
+        key: 'oright',
         description: 'Healthcare provider search platform connecting patients with friendly, caring doctors.',
         technologies: ['React', 'Tailwind CSS', 'Vite'],
         link: 'https://github.com/Mattojjo/oright',

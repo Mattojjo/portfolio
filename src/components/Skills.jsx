@@ -24,9 +24,9 @@ const [sectionRef, isVisible] = useSectionVisible();
               <h3 className="text-2xl font-bold text-orange-500">Engineering & Technology</h3>
             </div>
             <div className="flex flex-wrap gap-3">
-              {techIcons.map((skill, index) => (
+              {techIcons.map((skill) => (
                 <span
-                  key={index}
+                  key={skill.key}
                   className="flex items-center gap-2 px-5 py-3 bg-gray-100 text-gray-700 rounded-2xl text-sm font-medium neu-shadow hover:scale-105 transition-all duration-300 cursor-pointer"
                 >
                   {skill.svg}

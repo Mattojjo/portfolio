@@ -29,7 +29,7 @@ export default function Projects() {
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project) => (
             <a
-              key={project.name || project.link}
+              key={project.key}
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
@@ -43,7 +43,7 @@ export default function Projects() {
                     const techIcon = getTechIcon(tech);
                     return (
                       <span
-                        key={tech}
+                        key={tech.key}
                         className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium neu-shadow flex items-center gap-1.5"
                       >
                         {techIcon && <span className="scale-90">{techIcon.svg}</span>}
