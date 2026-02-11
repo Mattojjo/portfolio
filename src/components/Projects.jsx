@@ -1,8 +1,16 @@
 import { useSectionVisible } from '../hooks/useSectionVisible';
-import { projects } from '../utils/constants';
+import { projects, techIcons } from '../utils/constants';
 
 export default function Projects() {
   const [sectionRef, isVisible] = useSectionVisible();
+
+  const getTechIcon = (techName) => {
+    const normalizedName = techName.toLowerCase().replace(/\s+/g, '');
+    return techIcons.find(icon => {
+      const normalizedIconName = icon.name.toLowerCase().replace(/\s+/g, '');
+      return normalizedIconName.includes(normalizedName) || normalizedName.includes(normalizedIconName);
+    });
+  };
 
   return (
     <section
@@ -25,28 +33,46 @@ export default function Projects() {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative bg-gray-100 rounded-3xl neu-inset hover:scale-[1.02] transition-all duration-300 block overflow-hidden group min-h-[320px]"
+              className="relative bg-white rounded-3xl neu-inset hover:scale-105 transition-all duration-500 block overflow-hidden group cursor-pointer min-h-[320px]"
             >
-              <div className="absolute inset-0 w-full h-full z-10">
-                <img
-                  src={project.img}
-                  alt={project.name}
-                  className="w-full h-full object-cover opacity-0 group-hover:opacity-100 scale-110 group-hover:scale-100 transition-all duration-500 rounded-3xl"
-                  style={{ pointerEvents: 'none' }}
-                />
-              </div>
               <div className="relative z-20 p-8 transition-opacity duration-300 group-hover:opacity-0">
                 <h3 className="text-2xl font-bold text-orange-500 mb-4">{project.name}</h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
+                <p className="text-gray-600 mb-4">{project.reason}</p>
                 <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, idx) => (
-                    <span
-                      key={idx}
-                      className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium neu-shadow"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                  {project.technologies.map((tech, idx) => {
+                    const techIcon = getTechIcon(tech);
+                    return (
+                      <span
+                        key={idx}
+                        className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium neu-shadow flex items-center gap-1.5"
+                      >
+                        {techIcon && <span className="scale-75">{techIcon.svg}</span>}
+                        {tech}
+                      </span>
+                    );
+                  })}
+                </div>
+              </div>
+              {/* on hover */}
+              <div className="absolute inset-0 w-full h-full z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex">
+                {/* Left Side */}
+                <div className="w-1/2 p-8 flex items-center justify-center relative z-30">
+                  {project.description ? (
+                    <p className="text-gray-700 text-sm leading-relaxed">{project.description}</p>
+                  ) : (
+                    <p className="text-gray-500 italic text-sm">Click to view project</p>
+                  )}
+                </div>
+
+                {/* Right Side */}
+                <div className="w-1/2 relative">
+                  <img
+                    src={project.img}
+                    alt={project.name}
+                    className="w-full h-full object-cover"
+                    style={{ pointerEvents: 'none' }}
+                  />
+                  <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-20"></div>
                 </div>
               </div>
             </a>

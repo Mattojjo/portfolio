@@ -10,20 +10,32 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const sections = navItems.map(item => item.id);
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
+      
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.scrollY;
+      const isNearBottom = scrollTop + windowHeight >= documentHeight - 100;
 
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            if (section !== activeSection) {
-              setIsTransitioning(true);
-              setActiveSection(section);
+      let currentSection = sections[0];
+
+      if (isNearBottom) {
+        currentSection = sections[sections.length - 1];
+      } else {
+        for (const section of sections) {
+          const element = document.getElementById(section);
+          if (element) {
+            const { offsetTop } = element;
+            if (scrollPosition >= offsetTop) {
+              currentSection = section;
             }
-            break;
           }
         }
+      }
+
+      if (currentSection !== activeSection) {
+        setIsTransitioning(true);
+        setActiveSection(currentSection);
       }
     };
 

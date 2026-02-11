@@ -1,6 +1,9 @@
 import libreto from '../assets/projectsImg/libreto.png';
 import playGround from '../assets/projectsImg/playground.png';
+import graphz from '../assets/projectsImg/graphz.png';
+import oright from '../assets/projectsImg/oright.png';
 
+//////////////////////////////////////////////////////////////////////////////.    techIcons
 export const techIcons = [
   {
     name: 'JavaScript (ES6+)',
@@ -90,24 +93,42 @@ export const techIcons = [
     )
   }
 ];
-
+/////////////////////////////////////////////////////////////////////////////.    projects
 export const projects = [
-  {
-    name: 'PlayGround',
-    description: 'A modern, responsive React-based collection of interactive party games perfect for gatherings, date nights, and social events.',
-    technologies: ['React', 'Vite', 'Tailwind CSS'],
-    link: 'https://playground-alpha-three.vercel.app',
-    img: playGround
-  },    
-  {
-    name: 'Libreto',
-    description: 'A notes app built with Next.js, Node.js, and Tailwind CSS, designed for simplicity and speed to help you capture ideas and stay organized.',
-    technologies: ['Node.js', 'React', 'Tailwind CSS', 'Vite'],
-    link: 'https://github.com/Mattojjo/libreto',
-    img: libreto
-  }
+    {
+        name: 'PlayGround',
+        description: 'A modern, responsive React-based collection of interactive party games perfect for gatherings, date nights, and social events.',
+        technologies: ['React', 'Vite', 'Tailwind CSS'],
+        link: 'https://playground-alpha-three.vercel.app',
+        img: playGround,
+        reason: 'I couldn\'t find a modern, free Family Feud game online, so I built PlayGround. It now features multiple party games perfect for gatherings with friends and family.'
+    },
+    {
+        name: 'GraphZ',
+        description: 'A real-time day trading simulator built with React featuring candlestick charts, portfolio management, and mocked market data.',
+        technologies: ['React', 'Tailwind CSS', 'Vite'],
+        link: 'https://github.com/Mattojjo/graphz',
+        img: graphz,
+        reason: 'Built for my wife, a day trading student, who needed a free tool to practice trading strategies risk-free. GraphZ simulates realistic day trading with real-time charts and portfolio management.'
+    },    
+    {
+        name: 'Libreto',
+        description: 'A notes app built with Next.js, Node.js, and Tailwind CSS, designed for simplicity and speed to help you capture ideas and stay organized.',
+        technologies: ['Node.js', 'React', 'Tailwind CSS', 'Vite'],
+        link: 'https://github.com/Mattojjo/libreto',
+        img: libreto,
+        reason: 'The classic SWE notes app I built to learn Next.js and Node.js.'
+    },
+    {
+        name: 'oRight',
+        description: 'Healthcare provider search platform connecting patients with friendly, caring doctors.',
+        technologies: ['React', 'Tailwind CSS', 'Vite'],
+        link: 'https://github.com/Mattojjo/oright',
+        img: oright,
+        reason: 'Built while learning React and Tailwind—solving a real need by helping people find caring doctors who make healthcare feel more personal.'
+    }
 ];
-
+/////////////////////////////////////////////////////////////////////////////.    navItems
 export const navItems = [
   { id: 'home', label: 'Home' },
   { id: 'about', label: 'About' },
@@ -116,7 +137,7 @@ export const navItems = [
   { id: 'projects', label: 'Projects' },
   { id: 'connect', label: 'Connect' }
 ];
-
+////////////////////////////////////////////////////////////////////////////.    softSkills
 export const softSkills = [
   'Team Management',
   'Customer Experience',
@@ -125,7 +146,7 @@ export const softSkills = [
   'Cross-Functional Collaboration',
   'Problem Solving'
 ];
-
+/////////////////////////////////////////////////////////////////////////////.    experiences
 export const experiences = [
   {
     role: 'Software Engineer',
