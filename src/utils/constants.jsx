@@ -81,18 +81,13 @@ export const techIcons = [
     key: 'vite',
     svg: (
       <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none">
-        <defs>
-          <linearGradient id="viteGrad" x1="6" y1="3" x2="18" y2="21">
-            <stop offset="0%" stopColor="#41D1FF" />
-            <stop offset="100%" stopColor="#BD34FE" />
-          </linearGradient>
-        </defs>
-        <path d="M20.5 3.5L12 20l-8.5-16.5L12 6l8.5-2.5z" fill="url(#viteGrad)" />
+        <path d="M20.5 3.5L12 20l-8.5-16.5L12 6l8.5-2.5z" fill="#646CFF" />
         <path d="M12 6l-3 8 3 6 3-6-3-8z" fill="#FFCC00" opacity="0.8" />
       </svg>
     )
   }
 ];
+
 /////////////////////////////////////////////////////////////////////////////.    projects
 export const projects = [
     {
@@ -137,15 +132,7 @@ export const navItems = [
   { id: 'projects', label: 'Projects' },
   { id: 'connect', label: 'Connect' }
 ];
-////////////////////////////////////////////////////////////////////////////.    softSkills
-export const softSkills = [
-  'Team Management',
-  'Customer Experience',
-  'Operational Excellence',
-  'Data-Driven Decision Making',
-  'Cross-Functional Collaboration',
-  'Problem Solving'
-];
+
 /////////////////////////////////////////////////////////////////////////////.    experiences
 export const experiences = [
   {

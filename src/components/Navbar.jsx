@@ -87,7 +87,7 @@ export default function Navbar() {
                 data-section={item.id}
                 className={`relative z-10 px-2.5 sm:px-4 md:px-6 py-2.5 sm:py-3 rounded-full font-semibold transition-all duration-300 text-xs sm:text-sm md:text-base whitespace-nowrap ${
                   activeSection === item.id
-                    ? 'text-white text-shadow-lg'
+                    ? 'text-white drop-shadow-md'
                     : 'text-gray-700 hover:text-gray-900'
                 }`}
               >

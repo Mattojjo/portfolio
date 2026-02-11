@@ -13,7 +13,7 @@ export default function Footer() {
       }`}
       >
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">          
+        <div className="grid md:grid-cols-1 gap-8 mb-8">          
           <div>
             <h4 className="font-bold text-orange-500 mb-4 ">Connect</h4>
             <div className="flex gap-4 mb-6">

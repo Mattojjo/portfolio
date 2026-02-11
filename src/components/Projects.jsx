@@ -27,9 +27,9 @@ export default function Projects() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <a
-              key={index}
+              key={project.name || project.link}
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
@@ -39,11 +39,11 @@ export default function Projects() {
                 <h3 className="text-2xl font-bold text-orange-500 mb-4">{project.name}</h3>
                 <p className="text-gray-600 mb-4">{project.reason}</p>
                 <div className="flex flex-wrap gap-3">
-                  {project.technologies.map((tech, idx) => {
+                  {project.technologies.map((tech) => {
                     const techIcon = getTechIcon(tech);
                     return (
                       <span
-                        key={idx}
+                        key={tech}
                         className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium neu-shadow flex items-center gap-1.5"
                       >
                         {techIcon && <span className="scale-90">{techIcon.svg}</span>}
