@@ -1,11 +1,22 @@
+import { useSectionVisible } from '../hooks/useSectionVisible';
+import resume from '../assets/docss/Leinad\'s Resume.pdf';
+
 export default function Footer() {
+  const [sectionRef, isVisible] = useSectionVisible();
+
   return (
-    <footer className="bg-gray-100 text-gray-700 py-12">
+    <footer 
+      ref={sectionRef}
+      id="connect"
+        className={`py-20 bg-gray-100 transition-all duration-1000 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}
+      >
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">          
+        <div className="grid md:grid-cols-1 gap-8 mb-8">          
           <div>
             <h4 className="font-bold text-orange-500 mb-4 ">Connect</h4>
-            <div className="flex gap-4">
+            <div className="flex gap-4 mb-6">
               <a href="mailto:leinad9607@gmail.com" aria-label="Email Leinad Suarez" className="w-12 h-12 flex items-center justify-center hover:scale-110 transition-all duration-300 text-gray-700">
                 <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
@@ -22,17 +33,18 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
+            <a 
+              href={resume} 
+              download="Leinad_Suarez_Resume.pdf"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-all duration-300 hover:scale-105"
+            >
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+              </svg>
+              Download Resume
+            </a>
           </div>
         </div>
-          <div>
-            <h4 className="font-bold text-orange-500 mb-4">Quick Links</h4>
-            <div className="space-y-2">
-              <a href="#home" className="block text-gray-600 hover:text-orange-500 transition">Home</a>
-              <a href="#about" className="block text-gray-600 hover:text-orange-500 transition">About</a>
-              <a href="#services" className="block text-gray-600 hover:text-orange-500 transition">Services</a>
-              <a href="#work" className="block text-gray-600 hover:text-orange-500 transition">Work</a>
-            </div>
-          </div>
       </div>
     </footer>
   );

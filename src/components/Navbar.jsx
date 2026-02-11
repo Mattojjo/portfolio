@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { navItems } from '../utils/constants';
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState('home');
@@ -8,21 +9,33 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'experience'];
-      const scrollPosition = window.scrollY + 100;
+      const sections = navItems.map(item => item.id);
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
+      
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.scrollY;
+      const isNearBottom = scrollTop + windowHeight >= documentHeight - 100;
 
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            if (section !== activeSection) {
-              setIsTransitioning(true);
-              setActiveSection(section);
+      let currentSection = sections[0];
+
+      if (isNearBottom) {
+        currentSection = sections[sections.length - 1];
+      } else {
+        for (const section of sections) {
+          const element = document.getElementById(section);
+          if (element) {
+            const { offsetTop } = element;
+            if (scrollPosition >= offsetTop) {
+              currentSection = section;
             }
-            break;
           }
         }
+      }
+
+      if (currentSection !== activeSection) {
+        setIsTransitioning(true);
+        setActiveSection(currentSection);
       }
     };
 
@@ -52,23 +65,14 @@ export default function Navbar() {
     return () => window.removeEventListener('resize', updateIndicator);
   }, [activeSection]);
 
-  const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'experience', label: 'Experience' },
-    //{ id: 'projects', label: 'Projects' }
-    //{ id: 'contact', label: 'Contact' }
-  ];
-
   return (
     <nav className="fixed top-0 w-full bg-gray-100 z-50">
       <div className="max-w-4xl mx-auto px-3 sm:px-6 py-4 sm:py-6">
         <div className="flex justify-center items-center">
-          <div ref={navRef} className="relative flex gap-2 sm:gap-2 bg-white px-2.5 sm:px-3 py-2.5 sm:py-3 rounded-full neu-inset overflow-x-auto max-w-full">
+          <div ref={navRef} className="relative flex gap-0.5 sm:gap-5 bg-white px-2 sm:px-3 py-2.5 sm:py-3 rounded-full neu-inset overflow-x-auto max-w-full">
             <div
               className={`absolute top-2.5 sm:top-3 h-[calc(100%-1.25rem)] sm:h-[calc(100%-1.5rem)] bg-gradient-to-br from-orange-400 to-orange-500 rounded-full transition-all duration-300 ease-out shadow-lg backdrop-blur-sm ${
-                isTransitioning ? 'scale-30' : 'scale-100'
+                isTransitioning ? 'scale-50' : 'scale-100'
               }`}
               style={{
                 left: `${indicatorStyle.left}px`,
@@ -81,9 +85,9 @@ export default function Navbar() {
                 key={item.id}
                 href={`#${item.id}`}
                 data-section={item.id}
-                className={`relative z-10 px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 rounded-full font-semibold transition-all duration-300 text-sm sm:text-base whitespace-nowrap ${
+                className={`relative z-10 px-2.5 sm:px-4 md:px-6 py-2.5 sm:py-3 rounded-full font-semibold transition-all duration-300 text-xs sm:text-sm md:text-base whitespace-nowrap ${
                   activeSection === item.id
-                    ? 'text-white'
+                    ? 'text-white drop-shadow-md'
                     : 'text-gray-700 hover:text-gray-900'
                 }`}
               >

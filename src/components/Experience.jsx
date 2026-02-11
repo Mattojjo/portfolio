@@ -1,46 +1,9 @@
 import { useSectionVisible } from '../hooks/useSectionVisible';
+import { experiences } from '../utils/constants';
+import resume from "../assets/docss/Leinad's Resume.pdf";
 
 export default function Experience() {
 const [sectionRef, isVisible] = useSectionVisible();
-
-  const experiences = [
-    {
-      role: 'Software Engineer',
-      company: 'The Home Depot',
-      period: '2023 - Present',
-      description: 'Contributing to enterprise digital teams, building React and Next.js applications, integrating APIs with Node.js and SQL.',
-      highlights: [
-        'Migrated headless CMS to Contentful',
-        'Built AI-powered customer assistance tools',
-        'Improved content infrastructure for large-scale platforms'
-      ],
-      color: 'orange'
-    },
-    {
-      role: 'Customer Experience Manager',
-      company: 'The Home Depot',
-      period: '2020 - 2023',
-      description: 'Led daily store operations with responsibility for customer satisfaction, associate performance, and operational execution.',
-      highlights: [
-        'Primary escalation point for customers and associates',
-        'Improved customer experience scores',
-        'Developed strong business acumen and analytics skills'
-      ],
-      color: 'orange'
-    },
-    {
-      role: 'Department Manager',
-      company: 'The Home Depot',
-      period: '2017 - 2020',
-      description: 'Managed teams across multiple departments including Lumber, Garden, Receiving, and Customer Service.',
-      highlights: [
-        'Oversaw staffing and performance management',
-        'Analyzed metrics to drive improvements',
-        'Supported cross-department initiatives'
-      ],
-      color: 'orange'
-    }
-  ];
 
   return (
     <section 
@@ -54,6 +17,21 @@ const [sectionRef, isVisible] = useSectionVisible();
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Experience</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-orange-400 to-orange-500 mx-auto rounded-full"></div>
+        </div>
+        <div className="max-w-3xl mx-auto text-center text-gray-700 mb-8">
+          <p className="text-lg">Before transitioning into software engineering, I spent over a decade in leadership and customer-facing roles.</p>
+          <div className="mt-4">
+            <a
+              href={resume}
+              download="Leinad_Suarez_Resume.pdf"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition-all duration-200"
+            >
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+              </svg>
+              Resume
+            </a>
+          </div>
         </div>
         
         <div className="space-y-6">

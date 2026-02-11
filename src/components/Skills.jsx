@@ -1,19 +1,8 @@
 import { useSectionVisible } from '../hooks/useSectionVisible';
-import { techIcons } from './techIcons.jsx';
+import { techIcons } from '../utils/constants';
 
 export default function Skills() {
 const [sectionRef, isVisible] = useSectionVisible();
-
-  const techSkills = techIcons;
-  
-  const softSkills = [
-    'Team Management',
-    'Customer Experience',
-    'Operational Excellence',
-    'Data-Driven Decision Making',
-    'Cross-Functional Collaboration',
-    'Problem Solving'
-  ];
 
   return (
     <section 
@@ -29,35 +18,19 @@ const [sectionRef, isVisible] = useSectionVisible();
           <div className="w-20 h-1 bg-gradient-to-r from-orange-400 to-orange-500 mx-auto rounded-full"></div>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-1 gap-8">
           <div className="bg-gray-100 p-8 rounded-3xl neu-inset hover:scale-[1.02] transition-all duration-300">
             <div className="flex items-center gap-4 mb-6">
               <h3 className="text-2xl font-bold text-orange-500">Engineering & Technology</h3>
             </div>
             <div className="flex flex-wrap gap-3">
-              {techSkills.map((skill, index) => (
+              {techIcons.map((skill) => (
                 <span
-                  key={index}
+                  key={skill.key}
                   className="flex items-center gap-2 px-5 py-3 bg-gray-100 text-gray-700 rounded-2xl text-sm font-medium neu-shadow hover:scale-105 transition-all duration-300 cursor-pointer"
                 >
                   {skill.svg}
                   {skill.name}
-                </span>
-              ))}
-            </div>
-          </div>
-          
-          <div className="bg-gray-100 p-8 rounded-3xl neu-inset hover:scale-[1.02] transition-all duration-300">
-            <div className="flex items-center gap-4 mb-6">
-              <h3 className="text-2xl font-bold text-orange-500">Leadership & Business</h3>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              {softSkills.map((skill, index) => (
-                <span 
-                  key={index}
-                  className="px-5 py-3 bg-gray-100 text-gray-700 rounded-2xl text-sm font-medium neu-shadow hover:scale-105 transition-all duration-300 cursor-pointer"
-                >
-                  {skill}
                 </span>
               ))}
             </div>
