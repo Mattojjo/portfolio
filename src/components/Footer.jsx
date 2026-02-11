@@ -1,6 +1,9 @@
 export default function Footer() {
   return (
-    <footer className="bg-gray-100 text-gray-700 py-12">
+    <footer 
+      id="connect"
+      className="bg-gray-100 text-gray-700 py-12"
+      >
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-8 mb-8">          
           <div>
@@ -24,15 +27,6 @@ export default function Footer() {
             </div>
           </div>
         </div>
-          <div>
-            <h4 className="font-bold text-orange-500 mb-4">Quick Links</h4>
-            <div className="space-y-2">
-              <a href="#home" className="block text-gray-600 hover:text-orange-500 transition">Home</a>
-              <a href="#about" className="block text-gray-600 hover:text-orange-500 transition">About</a>
-              <a href="#services" className="block text-gray-600 hover:text-orange-500 transition">Services</a>
-              <a href="#work" className="block text-gray-600 hover:text-orange-500 transition">Work</a>
-            </div>
-          </div>
       </div>
     </footer>
   );

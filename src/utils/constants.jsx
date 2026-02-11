@@ -1,3 +1,6 @@
+import libreto from '../assets/projectsImg/libreto.png';
+import playGround from '../assets/projectsImg/playground.png';
+
 export const techIcons = [
   {
     name: 'JavaScript (ES6+)',
@@ -94,14 +97,14 @@ export const projects = [
     description: 'A modern, responsive React-based collection of interactive party games perfect for gatherings, date nights, and social events.',
     technologies: ['React', 'Vite', 'Tailwind CSS'],
     link: 'https://playground-alpha-three.vercel.app',
-    img: 'https://private-user-images.githubusercontent.com/139267544/547936242-1d157d79-c586-4592-a501-5eea35dce098.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzA3NTgyMTcsIm5iZiI6MTc3MDc1NzkxNywicGF0aCI6Ii8xMzkyNjc1NDQvNTQ3OTM2MjQyLTFkMTU3ZDc5LWM1ODYtNDU5Mi1hNTAxLTVlZWEzNWRjZTA5OC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwMjEwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDIxMFQyMTExNTdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03ODgzOGY5YmVhMDliMGJiNTQzNGIyN2Q2ZmRhYzcyYTMwODNmM2QyYzZiZDhiZTgwMDFlOTQ4N2ZjZTdlZDI0JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.tDeH-EsOkM9HFbcKD9adYTtLSWK3bGh9ciDrWqENksA'
-  },
+    img: playGround
+  },    
   {
     name: 'Libreto',
     description: 'A notes app built with Next.js, Node.js, and Tailwind CSS, designed for simplicity and speed to help you capture ideas and stay organized.',
     technologies: ['Node.js', 'React', 'Tailwind CSS', 'Vite'],
     link: 'https://github.com/Mattojjo/libreto',
-    img: 'https://private-user-images.githubusercontent.com/139267544/547934323-e129f74c-9962-472a-8e2a-3306c630e27a.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzA3NTgwNDksIm5iZiI6MTc3MDc1Nzc0OSwicGF0aCI6Ii8xMzkyNjc1NDQvNTQ3OTM0MzIzLWUxMjlmNzRjLTk5NjItNDcyYS04ZTJhLTMzMDZjNjMwZTI3YS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwMjEwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDIxMFQyMTA5MDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kZjdhNGM0MGY1NjhhMTk1YTg3ZDAxMDUyOWNmYTkwYzJmNTgyMTVlYjJiYzZhYzk1YTM2M2M0MzE3OGY0NWZlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.Tv1O1b34yIEMZGiHWfe1HpkWdH54vnTKcthYZdYEa5c'
+    img: libreto
   }
 ];
 
@@ -111,7 +114,7 @@ export const navItems = [
   { id: 'skills', label: 'Skills' },
   { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
-  { id: 'contact', label: 'Contact' }
+  { id: 'connect', label: 'Connect' }
 ];
 
 export const softSkills = [

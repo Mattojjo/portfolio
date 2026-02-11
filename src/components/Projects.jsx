@@ -27,7 +27,6 @@ export default function Projects() {
               rel="noopener noreferrer"
               className="relative bg-gray-100 rounded-3xl neu-inset hover:scale-[1.02] transition-all duration-300 block overflow-hidden group min-h-[320px]"
             >
-              {/* Image fills tile, overlays with gradient for readability */}
               <div className="absolute inset-0 w-full h-full z-10">
                 <img
                   src={project.img}
