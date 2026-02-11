@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { navItems } from '../utils/constants';
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState('home');
@@ -8,7 +9,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'experience'];
+      const sections = ['home', 'about', 'skills', 'experience', 'projects', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -51,15 +52,6 @@ export default function Navbar() {
     
     return () => window.removeEventListener('resize', updateIndicator);
   }, [activeSection]);
-
-  const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'experience', label: 'Experience' },
-    //{ id: 'projects', label: 'Projects' }
-    //{ id: 'contact', label: 'Contact' }
-  ];
 
   return (
     <nav className="fixed top-0 w-full bg-gray-100 z-50">

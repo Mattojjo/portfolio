@@ -1,46 +1,8 @@
 import { useSectionVisible } from '../hooks/useSectionVisible';
+import { experiences } from '../utils/constants';
 
 export default function Experience() {
 const [sectionRef, isVisible] = useSectionVisible();
-
-  const experiences = [
-    {
-      role: 'Software Engineer',
-      company: 'The Home Depot',
-      period: '2023 - Present',
-      description: 'Contributing to enterprise digital teams, building React and Next.js applications, integrating APIs with Node.js and SQL.',
-      highlights: [
-        'Migrated headless CMS to Contentful',
-        'Built AI-powered customer assistance tools',
-        'Improved content infrastructure for large-scale platforms'
-      ],
-      color: 'orange'
-    },
-    {
-      role: 'Customer Experience Manager',
-      company: 'The Home Depot',
-      period: '2020 - 2023',
-      description: 'Led daily store operations with responsibility for customer satisfaction, associate performance, and operational execution.',
-      highlights: [
-        'Primary escalation point for customers and associates',
-        'Improved customer experience scores',
-        'Developed strong business acumen and analytics skills'
-      ],
-      color: 'orange'
-    },
-    {
-      role: 'Department Manager',
-      company: 'The Home Depot',
-      period: '2017 - 2020',
-      description: 'Managed teams across multiple departments including Lumber, Garden, Receiving, and Customer Service.',
-      highlights: [
-        'Oversaw staffing and performance management',
-        'Analyzed metrics to drive improvements',
-        'Supported cross-department initiatives'
-      ],
-      color: 'orange'
-    }
-  ];
 
   return (
     <section 

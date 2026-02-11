@@ -21,10 +21,9 @@ const [sectionRef, isVisible] = useSectionVisible();
           <div className="w-20 h-1 bg-gradient-to-r from-orange-400 to-orange-500 mx-auto rounded-full"></div>
         </div>
         
-        <div className="flex flex-col gap-8 md:gap-12 items-center">
-          <div className="flex flex-col md:flex-row gap-8 w-full max-w-5xl">
-            <div className="bg-gray-100 p-8 rounded-3xl neu-inset hover:scale-[1.02] transition-all duration-300 flex-1">
-              <h4 className="text-2xl font-bold text-orange-500 mb-4">What Sets Me Apart</h4>
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="bg-gray-100 p-8 rounded-3xl neu-inset hover:scale-[1.02] transition-all duration-300">
+              <h3 className="text-2xl font-bold text-orange-500 mb-4">What Sets Me Apart</h3>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <CheckIcon />
@@ -43,8 +42,8 @@ const [sectionRef, isVisible] = useSectionVisible();
                   <span className="text-gray-600">Experience delivering solutions at enterprise scale</span>
                 </li>
               </ul>
-            </div>
-            <div className="bg-gray-100 p-8 rounded-3xl neu-inset hover:scale-[1.02] transition-all duration-300 flex-1">
+          </div>
+          <div className="bg-gray-100 p-8 rounded-3xl neu-inset hover:scale-[1.02] transition-all duration-300">
               <h3 className="text-2xl text-orange-500 font-bold mb-4">
                 Combining Leadership & Technology
               </h3>
@@ -58,7 +57,6 @@ const [sectionRef, isVisible] = useSectionVisible();
                   <span className="text-gray-600">Known for strong ownership, cross-functional collaboration, and a customer-first engineering mindset. I design software with a real-world understanding of customers and operations.</span>
                 </li>
               </ul>
-            </div>
           </div>
         </div>
       </div>

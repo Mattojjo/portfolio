@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import profileImage from '../assets/lee.jpeg';
-import { techIcons } from './techIcons.jsx';
+import { techIcons } from '../utils/constants';
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
