@@ -1,8 +1,15 @@
+import { useSectionVisible } from '../hooks/useSectionVisible';
+
 export default function Footer() {
+  const [sectionRef, isVisible] = useSectionVisible();
+
   return (
     <footer 
+      ref={sectionRef}
       id="connect"
-      className="bg-gray-100 text-gray-700 py-12"
+        className={`py-20 bg-gray-100 transition-all duration-1000 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}
       >
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-8 mb-8">          
