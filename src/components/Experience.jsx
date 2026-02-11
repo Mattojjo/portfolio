@@ -1,5 +1,6 @@
 import { useSectionVisible } from '../hooks/useSectionVisible';
 import { experiences } from '../utils/constants';
+import resume from "../assets/docss/Leinad's Resume.pdf";
 
 export default function Experience() {
 const [sectionRef, isVisible] = useSectionVisible();
@@ -19,6 +20,18 @@ const [sectionRef, isVisible] = useSectionVisible();
         </div>
         <div className="max-w-3xl mx-auto text-center text-gray-700 mb-8">
           <p className="text-lg">Before transitioning into software engineering, I spent over a decade in leadership and customer-facing roles.</p>
+          <div className="mt-4">
+            <a
+              href={resume}
+              download="Leinad_Suarez_Resume.pdf"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition-all duration-200"
+            >
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+              </svg>
+              Resume
+            </a>
+          </div>
         </div>
         
         <div className="space-y-6">
