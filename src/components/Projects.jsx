@@ -69,10 +69,9 @@ export default function Projects() {
                   <img
                     src={project.img}
                     alt={project.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full neu-inset rounded-3xl object-center scale-110 group-hover:scale-100 transition-all duration-500"
                     style={{ pointerEvents: 'none' }}
                   />
-                  <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-gray-100 to-transparent z-20"></div>
                 </div>
               </div>
             </a>
