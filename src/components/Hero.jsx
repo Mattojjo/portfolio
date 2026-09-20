@@ -38,7 +38,7 @@ export default function Hero() {
               </p>
             </div>
             <p className="text-gray-600 text-lg leading-relaxed max-w-xl">
-              Results-driven developer with a unique blend of enterprise leadership and modern web development. 
+              Over caffeinated developer with a unique blend of enterprise leadership and modern web development. 
               Building scalable solutions with React, JavaScript, and cutting-edge technologies.
             </p>
             <div className="pt-8">

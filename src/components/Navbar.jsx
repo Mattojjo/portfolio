@@ -80,8 +80,8 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 w-full z-50 bg-transparent">
       <div className="max-w-4xl mx-auto px-3 sm:px-6 py-4 sm:py-6">
-        <div className="flex justify-center items-center">
-          <div ref={navRef} className="relative flex gap-4 sm:gap-8 overflow-x-auto max-w-full">
+        <div className="flex justify-center items-center backdrop-blur-xl rounded-3xl h-12 w-full">
+          <div ref={navRef} className="relative flex gap-4 sm:gap-8 pb-1">
             {navItems.map((item) => (
               <a
                 key={item.id}
@@ -98,7 +98,7 @@ export default function Navbar() {
             ))}
 
             <div
-              className={`absolute -bottom-1 h-0.5 bg-gradient-to-r from-orange-500 to-brew-600 rounded-full transition-all duration-300 ease-out ${
+              className={`absolute bottom-0 h-0.5 bg-gradient-to-r from-orange-500 to-brew-600 rounded-full transition-all duration-300 ease-out ${
                 isTransitioning ? 'scale-x-50 opacity-60' : 'scale-x-100 opacity-100'
               }`}
               style={{
