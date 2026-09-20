@@ -1,28 +1,11 @@
 @import 'tailwindcss';
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap');
 
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/open-sans-400.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('/open-sans-600.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('/open-sans-700.woff2') format('woff2');
+@theme {
+  --color-brew-400: #a97c50;
+  --color-brew-500: #8b5e3c;
+  --color-brew-600: #6f4a2e;
+  --color-brew-700: #5c3d26;
 }
 
 @layer base {
@@ -31,7 +14,7 @@
   }
   
   body {
-    font-family: 'Inter', 'Open Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Sora', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   }
 }
 
@@ -184,6 +167,116 @@
     .animate-scale-wave-8:hover {
       transform: scale(1.15);
       transition: transform 0.2s ease;
+    }
+  }
+
+  /* Cycling hero role text */
+  @keyframes roleFadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-role-fade {
+    animation: roleFadeIn 0.5s ease-out;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-role-fade {
+      animation: none;
+    }
+  }
+
+  /* Coffee cup steam wisps */
+  @keyframes steamRise {
+    0% {
+      transform: translateY(0) scaleX(1);
+      opacity: 0;
+    }
+    30% {
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(-10px) scaleX(1.4);
+      opacity: 0;
+    }
+  }
+
+  .animate-steam-1 {
+    animation: steamRise 2.4s ease-in-out infinite;
+    animation-delay: 0s;
+  }
+
+  .animate-steam-2 {
+    animation: steamRise 2.4s ease-in-out infinite;
+    animation-delay: 0.6s;
+  }
+
+  .animate-steam-3 {
+    animation: steamRise 2.4s ease-in-out infinite;
+    animation-delay: 1.2s;
+  }
+
+  /* Film reel gentle wobble */
+  @keyframes reelSpin {
+    0%, 100% {
+      transform: rotate(-8deg);
+    }
+    50% {
+      transform: rotate(8deg);
+    }
+  }
+
+  .animate-reel-spin {
+    animation: reelSpin 4s ease-in-out infinite;
+    transform-origin: center;
+  }
+
+  /* Blinking code cursor */
+  @keyframes blinkCursor {
+    0%, 49% {
+      opacity: 1;
+    }
+    50%, 100% {
+      opacity: 0;
+    }
+  }
+
+  .animate-blink-cursor {
+    animation: blinkCursor 1s steps(1) infinite;
+  }
+
+  /* Staggered checklist entrance */
+  @keyframes checklistIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-12px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-checklist-in {
+    animation: checklistIn 0.9s ease-out both;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-steam-1,
+    .animate-steam-2,
+    .animate-steam-3,
+    .animate-reel-spin,
+    .animate-blink-cursor,
+    .animate-checklist-in {
+      animation: none;
+      opacity: 1;
+      transform: none;
     }
   }
 

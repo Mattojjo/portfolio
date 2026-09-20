@@ -8,6 +8,8 @@ export default function Navbar() {
   const navRef = useRef(null);
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
       const sections = navItems.map(item => item.id);
       const scrollPosition = window.scrollY + window.innerHeight / 3;
@@ -39,10 +41,20 @@ export default function Navbar() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
     handleScroll();
     
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', onScroll);
   }, [activeSection]);
 
   useEffect(() => {
@@ -66,34 +78,34 @@ export default function Navbar() {
   }, [activeSection]);
 
   return (
-    <nav className="fixed top-0 w-full bg-gray-100 z-50">
+    <nav className="fixed top-0 w-full z-50 bg-transparent">
       <div className="max-w-4xl mx-auto px-3 sm:px-6 py-4 sm:py-6">
         <div className="flex justify-center items-center">
-          <div ref={navRef} className="relative flex gap-0.5 sm:gap-5 bg-white px-2 sm:px-3 py-2.5 sm:py-3 rounded-full neu-inset overflow-x-auto max-w-full">
+          <div ref={navRef} className="relative flex gap-4 sm:gap-8 overflow-x-auto max-w-full">
+            {navItems.map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                data-section={item.id}
+                className={`relative z-10 px-1 py-2 font-semibold transition-all duration-300 text-xs sm:text-sm md:text-base whitespace-nowrap ${
+                  activeSection === item.id
+                    ? 'text-gray-900'
+                    : 'text-gray-600 hover:text-gray-900'
+                }`}
+              >
+                {item.label}
+              </a>
+            ))}
+
             <div
-              className={`absolute top-2.5 sm:top-3 h-[calc(100%-1.25rem)] sm:h-[calc(100%-1.5rem)] bg-gradient-to-br from-orange-400 to-orange-500 rounded-full transition-all duration-300 ease-out shadow-lg backdrop-blur-sm ${
-                isTransitioning ? 'scale-50' : 'scale-100'
+              className={`absolute -bottom-1 h-0.5 bg-gradient-to-r from-orange-500 to-brew-600 rounded-full transition-all duration-300 ease-out ${
+                isTransitioning ? 'scale-x-50 opacity-60' : 'scale-x-100 opacity-100'
               }`}
               style={{
                 left: `${indicatorStyle.left}px`,
                 width: `${indicatorStyle.width}px`,
               }}
             />
-            
-            {navItems.map((item) => (
-              <a
-                key={item.id}
-                href={`#${item.id}`}
-                data-section={item.id}
-                className={`relative z-10 px-2.5 sm:px-4 md:px-6 py-2.5 sm:py-3 rounded-full font-semibold transition-all duration-300 text-xs sm:text-sm md:text-base whitespace-nowrap ${
-                  activeSection === item.id
-                    ? 'text-white drop-shadow-md'
-                    : 'text-gray-700 hover:text-gray-900'
-                }`}
-              >
-                {item.label}
-              </a>
-            ))}
           </div>
         </div>
       </div>

@@ -1,41 +1,23 @@
-import { useEffect, useRef, useState } from 'react';
-
+import { useEffect, useState } from 'react';
 import profileImage from '../assets/lee.jpeg';
 import { techIcons } from '../utils/constants';
 
+const roles = ['Software Engineer', 'Operations Manager', 'Team Builder'];
+
 export default function Hero() {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef(null);
+  const [roleIndex, setRoleIndex] = useState(0);
 
   useEffect(() => {
-    const element = sectionRef.current;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (element) {
-      observer.observe(element);
-    }
-
-    return () => {
-      if (element) {
-        observer.unobserve(element);
-      }
-    };
+    const interval = setInterval(() => {
+      setRoleIndex((prev) => (prev + 1) % roles.length);
+    }, 2200);
+    return () => clearInterval(interval);
   }, []);
 
   return (
     <section 
-      ref={sectionRef}
       id="home" 
-      className={`min-h-screen flex items-center justify-center bg-gray-100 pt-20 transition-all duration-1000 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
+      className="min-h-screen flex items-center justify-center bg-gray-100 pt-20"
     >
       <div className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -46,7 +28,13 @@ export default function Hero() {
                 Leinad Suarez
               </h1>
               <p className="text-2xl md:text-3xl text-gray-600">
-                I am a <span className="text-orange-500 font-bold">Software Engineer</span>
+                I am a{' '}
+                <span
+                  key={roleIndex}
+                  className="bg-gradient-to-r from-orange-500 to-brew-600 bg-clip-text text-transparent font-bold inline-block animate-role-fade"
+                >
+                  {roles[roleIndex]}
+                </span>
               </p>
             </div>
             <p className="text-gray-600 text-lg leading-relaxed max-w-xl">
@@ -79,6 +67,11 @@ export default function Hero() {
                   <img 
                     src={profileImage} 
                     alt="Leinad Suarez" 
+                    width="800"
+                    height="1066"
+                    loading="eager"
+                    decoding="async"
+                    fetchPriority="high"
                     className="w-full h-full object-cover scale-125 object-center"
                   />
                 </div>

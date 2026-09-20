@@ -16,7 +16,7 @@ const [sectionRef, isVisible] = useSectionVisible();
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Experience</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-orange-400 to-orange-500 mx-auto rounded-full"></div>
+          <div className="w-20 h-1 bg-gradient-to-r from-orange-500 to-brew-600 mx-auto rounded-full"></div>
         </div>
         <div className="max-w-3xl mx-auto text-center text-gray-700 mb-8">
           <p className="text-lg">Before transitioning into software engineering, I spent over a decade in leadership and customer-facing roles.</p>
@@ -24,7 +24,7 @@ const [sectionRef, isVisible] = useSectionVisible();
             <a
               href={resume}
               download="Leinad_Suarez_Resume.pdf"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition-all duration-200"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-500 to-brew-600 hover:from-orange-600 hover:to-brew-700 text-white rounded-md transition-all duration-200"
             >
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
@@ -41,10 +41,10 @@ const [sectionRef, isVisible] = useSectionVisible();
               className="bg-gray-100 p-8 rounded-3xl neu-inset hover:scale-[1.02] transition-all duration-300 group cursor-pointer"
             >
               <div className="mb-4">
-                <h3 className="text-2xl font-bold text-gray-800 group-hover:text-orange-500 transition">
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-800 group-hover:from-orange-500 group-hover:to-brew-600 bg-clip-text text-transparent transition-all duration-300">
                   {exp.role}
                 </h3>
-                <p className="text-lg text-orange-500 font-semibold mt-1">{exp.company} • {exp.period}</p>
+                <p className="text-lg font-semibold mt-1 bg-gradient-to-r from-orange-500 to-brew-600 bg-clip-text text-transparent">{exp.company} • {exp.period}</p>
               </div>
               
               <p className="text-gray-600 mb-4">{exp.description}</p>
@@ -52,7 +52,7 @@ const [sectionRef, isVisible] = useSectionVisible();
               <div className="space-y-2">
                 {exp.highlights.map((highlight, idx) => (
                   <div key={idx} className="flex items-start gap-3">
-                    <span className="text-orange-500 mt-1">▸</span>
+                    <span className="bg-gradient-to-r from-orange-500 to-brew-600 bg-clip-text text-transparent mt-1">▸</span>
                     <span className="text-gray-600">{highlight}</span>
                   </div>
                 ))}
