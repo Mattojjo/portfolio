@@ -1,7 +1,17 @@
 import { useSectionVisible } from '../hooks/useSectionVisible';
 
 function CheckIcon() {
-  return <span className="bg-gradient-to-r from-orange-500 to-brew-600 bg-clip-text text-transparent mt-1">✓</span>;
+  return (
+    <svg className="w-5 h-5 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none">
+      <path
+        d="M4 12.5l4.5 4.5L20 6"
+        stroke="#6f4a2e"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
 }
 
 function CoffeeIcon() {

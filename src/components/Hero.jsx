@@ -10,7 +10,7 @@ export default function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setRoleIndex((prev) => (prev + 1) % roles.length);
-    }, 2200);
+    }, 3600);
     return () => clearInterval(interval);
   }, []);
 
